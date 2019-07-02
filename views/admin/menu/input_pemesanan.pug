@@ -1,0 +1,53 @@
+include  ../../admin/dashboard
+// Content Wrapper. Contains page content
+.content-wrapper
+    // Content Header (Page header)
+    section.content-header
+        h1
+            | Data Pemesanan
+        ol.breadcrumb
+            li
+                a(href='#')
+                    i.fa.fa-dashboard
+                    |  Home
+            li
+                a(href='#') Tables
+            li.active Data tables
+    // Main content
+    section.content
+        .row
+            .col-xs-12
+                // /.box-body
+                // /.box
+                .box
+                    .box-body
+                        .box.box-info
+                            .box-header.with-border
+                                h3.box-title Input data pemesanan
+                            // /.box-header
+                            // form start
+                            form.form-horizontal(method="post", action="/inputpemesanan", role='form',enctype="multipart/form-data")
+                                .box-body
+                                    .form-group
+                                        label.col-sm-2.control-label(for='kodepemesanan') Kode Pemesanan
+                                        .col-sm-10
+                                            input#kodepemesanan.form-control(type='text' required name="kodepemesanan" placeholder='Kode Pemesanan')
+                                    .form-group
+                                        label.col-sm-2.control-label(for='kodemenu') Kode Menu
+                                        .col-sm-10
+                                            input#kodemenu.form-control(type='text' required name="kodemenu" placeholder='Kode Menu')
+                                    .form-group
+                                        label.col-sm-2.control-label(for='qty') Jumlah Beli
+                                        .col-sm-10
+                                            input#qty.form-control(type='number' required name="qty" placeholder='Jumlah Beli')
+                                    .form-group
+                                        label.col-sm-2.control-label(for='harga') Harga
+                                        .col-sm-10
+                                            input#harga.form-control(type='number' required name="harga" placeholder='Harga')
+
+
+                                // /.box-body
+                                .box-footer
+                                    button.btn.btn-info.pull-right(type='submit') Input Data
+                                // /.box-footer
+

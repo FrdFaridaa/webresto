@@ -1,0 +1,54 @@
+aside.main-sidebar
+    // sidebar: style can be found in sidebar.less
+    section.sidebar
+        // Sidebar user panel
+        .user-panel
+            .pull-left.image
+                img.img-circle(src='/adminlte/dist/img/user2-160x160.jpg' alt='User Image')
+            .pull-left.info
+                //p #{session_store.username}
+                a(href='#')
+                    i.fa.fa-circle.text-success
+                    |  Online
+        ul.sidebar-menu(data-widget='tree')
+            li.header MAIN NAVIGATION
+                li.treeview
+                    a(href='/')
+                        i.fa.fa-dashboard
+                        span Dashboard
+
+                        if(session_store.admin == true)
+
+                            li.treeview
+                                a(href='#')
+                                    i.fa.fa-laptop
+                                    span Menu Sushi Dragon
+                                    span.pull-right-container
+                                        i.fa.fa-angle-left.pull-right
+                                ul.treeview-menu
+                                    li
+                                        a(href='/inputmenu')
+                                            i.fa.fa-circle-o
+                                            |  Input Menu
+                                    li
+                                        a(href='/datamenu')
+                                            i.fa.fa-circle-o
+                                            |  Lihat Data Menu
+                                    li
+                                        a(href='/datapemesanan')
+                                            i.fa.fa-circle-o
+                                            |  Lihat Data Pemesanan
+                        else
+                            li.treeview
+                                a(href='#')
+                                    i.fa.fa-laptop
+                                    span Data Menu Sushi Dragon
+                                    span.pull-right-container
+                                        i.fa.fa-angle-left.pull-right
+                                ul.treeview-menu
+                                    li
+                                        a(href='/datamember')
+                                            i.fa.fa-circle-o
+                                            |  Lihat Data Menu
+
+

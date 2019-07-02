@@ -1,0 +1,61 @@
+include  ../../admin/dashboard
+// Content Wrapper. Contains page content
+.content-wrapper
+    // Content Header (Page header)
+    section.content-header
+        h1
+            | Data Menu Restaurant
+        ol.breadcrumb
+            li
+                a(href='#')
+                    i.fa.fa-dashboard
+                    |  Home
+            li
+                a(href='#') Tables
+            li.active Data tables
+    // Main content
+    section.content
+        .row
+            .col-xs-12
+                // /.box-body
+                // /.box
+                .box
+                    .box-body
+                        .box.box-info
+                            .box-header.with-border
+                                h3.box-title Input data menu makanan
+                            // /.box-header
+                            // form start
+                            form.form-horizontal(method="post", action="/inputmenu", role='form',enctype="multipart/form-data")
+                                .box-body
+                                    .form-group
+                                        label.col-sm-2.control-label(for='kodemenu') Kode Menu
+                                        .col-sm-10
+                                            input#kodemenu.form-control(type='text' required name="kodemenu" placeholder='Kode Menu')
+                                    .form-group
+                                        label.col-sm-2.control-label(for='namamenu') Nama Menu
+                                        .col-sm-10
+                                            input#namamenu.form-control(type='text' required name="namamenu" placeholder='Nama Menu')
+                                    .form-group
+                                        label.col-sm-2.control-label(for='poto') Foto Menu
+                                        .col-sm-10
+                                            input#poto.form-control(type='file' required name="foto" placeholder='Foto Menu')
+                                    .form-group
+                                        label.col-sm-2.control-label Select Menu
+                                        .col-sm-10
+                                            select.form-control(name="tipemenu")
+                                                option -Select Menu-
+                                                option(value="Makanan") Makanan
+                                                option(value="Minuman") Minuman
+                                                option(value="Dessert") Dessert
+                                    .form-group
+                                        label.col-sm-2.control-label(for='harga') Harga
+                                        .col-sm-10
+                                            input#harga.form-control(type='number' required name="harga" placeholder='Harga')
+
+
+                                // /.box-body
+                                .box-footer
+                                    button.btn.btn-info.pull-right(type='submit') Input Data
+                                // /.box-footer
+

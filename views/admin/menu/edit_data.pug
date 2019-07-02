@@ -1,0 +1,58 @@
+include  ../../admin/dashboard
+// Content Wrapper. Contains page content
+.content-wrapper
+    // Content Header (Page header)
+    section.content-header
+        h1
+            | Data Menu
+        ol.breadcrumb
+            li
+                a(href='#')
+                    i.fa.fa-dashboard
+                    |  Home
+            li
+                a(href='#') Tables
+            li.active Data tables
+    // Main content
+    section.content
+        .row
+            .col-xs-12
+                // /.box-body
+                // /.box
+                .box
+                    .box-body
+                        .box.box-info
+                            .box-header.with-border
+                                h3.box-title Input data menu
+                            // /.box-header
+                            // form start
+                            form.form-horizontal(method="POST", action='/'+menus._id + '/editmenu', enctype="multipart/form-data")
+                                .box-body
+                                    .form-group
+                                        label.col-sm-2.control-label(for='kodemenu') Kode Menu
+                                        .col-sm-10
+                                            input#kodemenu.form-control(type='text' required name="kodemenu" placeholder='Kode Menu' value= (kodemenu == undefined) ? menus.kodemenu: kodemenu)
+                                    .form-group
+                                        label.col-sm-2.control-label(for='namamenu') Nama Menu
+                                        .col-sm-10
+                                            input#namamenu.form-control(type='text' name="namamenu" placeholder='Nama Menu' value= (namamenu == undefined) ? menus.namamenu: namamenu)
+                                    .form-group
+                                        label.col-sm-2.control-label(for='tipemenu') Tipe Menu
+                                        .col-sm-10
+                                            input#tipemenu.form-control(type='text' name="tipemenu" placeholder='Tipe Menu' value= (tipemenu == undefined) ? menus.tipemenu: tipemenu)
+                                    .form-group
+                                        label.col-sm-2.control-label(for='fotomenu') Foto Menu
+                                        .col-sm-10
+                                            input#fotomenu.form-control(type='file' name="foto" placeholder='Foto Menu' value= (fotomenu == undefined) ? menus.foto: fotomenu)
+                                            img(src='http://localhost:3200/uploads/'+menus.foto, alt='', border='3', height='100', width='100')
+                                    .form-group
+                                        label.col-sm-2.control-label(for='harga') Harga
+                                        .col-sm-10
+                                            input#harga.form-control(type='number' name="harga" placeholder='Harga' value= (harga == undefined) ? menus.harga: harga)
+
+
+                                // /.box-body
+                                .box-footer
+                                    button.btn.btn-info.pull-right(type='submit') Input Data
+                                // /.box-footer
+
